@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="bg" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BarberShopTugay | Кърджали</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: '#D4AF37',
+                        'gold-light': '#F3E5AB',
+                        'dark-bg': '#0f0f0f',
+                        'card-bg': '#18181b',
+                        'border-color': '#27272a'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #0f0f0f;
+            color: #f4f4f5;
+            font-family: 'Inter', sans-serif;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f0f0f;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #27272a;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #D4AF37;
+        }
+    </style>
+</head>
+<body class="bg-dark-bg text-zinc-100 antialiased selection:bg-gold selection:text-black">
+
+    <header class="fixed top-0 left-0 right-0 z-50 bg-dark-bg/90 backdrop-blur-md border-b border-border-color">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center space-x-3 group">
+                <div class="w-10 h-10 rounded-full bg-gold flex items-center justify-center text-black font-bold text-xl shadow-lg shadow-gold/20 group-hover:scale-105 transition-transform">
+                    T
+                </div>
+                <div>
+                    <span class="text-xl font-bold tracking-wider text-white">BarberShop<span class="text-gold">Tugay</span></span>
+                    <span class="block text-xs text-zinc-400">Кърджали Център</span>
+                </div>
+            </a>
+            
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                <a href="#services" class="hover:text-gold transition-colors">Услуги</a>
+                <a href="#about" class="hover:text-gold transition-colors">За нас</a>
+                <a href="#gallery" class="hover:text-gold transition-colors">Галерия</a>
+                <a href="#reviews" class="hover:text-gold transition-colors">Отзиви (5.0)</a>
+                <a href="#contact" class="hover:text-gold transition-colors">Контакти</a>
+            </nav>
+
+            <div class="hidden md:flex items-center space-x-4">
+                <a href="tel:0877733362" class="flex items-center space-x-2 text-gold font-semibold bg-zinc-900 border border-border-color px-4 py-2 rounded-full hover:bg-gold hover:text-black transition-all">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>087 773 3362</span>
+                </a>
+                <a href="#booking" class="bg-gold text-black px-5 py-2.5 rounded-full font-bold hover:bg-gold-light transition-all shadow-lg shadow-gold/20">
+                    Запази час
+                </a>
+            </div>
+
+            <!-- Mobile menu button -->
+            <button id="mobile-menu-btn" class="md:hidden text-zinc-400 hover:text-white focus:outline-none p-2">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-card-bg border-b border-border-color px-4 pt-2 pb-6 space-y-3">
+            <a href="#services" class="block py-2 text-zinc-300 hover:text-gold font-medium">Услуги</a>
+            <a href="#about" class="block py-2 text-zinc-300 hover:text-gold font-medium">За нас</a>
+            <a href="#gallery" class="block py-2 text-zinc-300 hover:text-gold font-medium">Галерия</a>
+            <a href="#reviews" class="block py-2 text-zinc-300 hover:text-gold font-medium">Отзиви (5.0)</a>
+            <a href="#contact" class="block py-2 text-zinc-300 hover:text-gold font-medium">Контакти</a>
+            <div class="pt-4 flex flex-col space-y-3">
+                <a href="tel:0877733362" class="flex items-center justify-center space-x-2 text-gold font-semibold bg-zinc-900 border border-border-color px-4 py-3 rounded-xl">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>087 773 3362</span>
+                </a>
+                <a href="#booking" class="text-center bg-gold text-black px-5 py-3 rounded-xl font-bold">
+                    Запази час сега
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section class="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden bg-gradient-to-b from-dark-bg via-zinc-900 to-dark-bg">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#D4AF37_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-2 bg-zinc-900/90 border border-border-color px-3.5 py-1.5 rounded-full text-xs font-medium text-gold shadow-md">
+                        <span class="flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                        <span>Отворено · Затваря в 19:00 ч.</span>
+                    </div>
+                    <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-tight">
+                        Премиум Грижа за Вашата <span class="text-gold">Външност</span>
+                    </h1>
+                    <p class="text-lg text-zinc-400 max-w-xl mx-auto lg:mx-0">
+                        Професионално подстригване, оформяне на брада и безупречно внимание към детайла в сърцето на Кърджали. Изживейте перфектния стил в модерна и стилна атмосфера.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#booking" class="w-full sm:w-auto bg-gold text-black font-bold px-8 py-4 rounded-xl hover:bg-gold-light transition-all shadow-xl shadow-gold/25 flex items-center justify-center space-x-3 text-base">
+                            <i class="fa-regular fa-calendar-days"></i>
+                            <span>Запази Час Онлайн</span>
+                        </a>
+                        <a href="#services" class="w-full sm:w-auto bg-zinc-900 border border-border-color text-zinc-200 font-semibold px-8 py-4 rounded-xl hover:bg-zinc-800 transition-all flex items-center justify-center space-x-2 text-base">
+                            <span>Виж Услугите</span>
+                            <i class="fa-solid fa-arrow-down text-xs"></i>
+                        </a>
+                    </div>
+                    <div class="pt-6 flex items-center justify-center lg:justify-start space-x-6 text-sm text-zinc-400 border-t border-border-color/60">
+                        <div class="flex items-center space-x-2">
+                            <div class="flex text-amber-400">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <span class="font-bold text-white">5.0</span>
+                            <span class="text-zinc-500">(4 отзива)</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fa-solid fa-location-dot text-gold"></i>
+                            <span>ул. „Тутракан“ 13</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Hero Image showcase using image_4.png -->
+                <div class="relative group">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-gold to-amber-600 rounded-3xl blur-lg opacity-30 group-hover:opacity-50 transition duration-1000"></div>
+                    <div class="relative rounded-2xl overflow-hidden border border-border-color bg-card-bg shadow-2xl">
+                        <img src="pic/in.jpg" alt="BarberShopTugay Interior" class="w-full h-[420px] object-cover transform hover:scale-105 transition duration-700" onerror="this.src='https://placehold.co/600x420/18181b/D4AF37?text=BarberShopTugay'">
+                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-6">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="text-white font-bold text-lg">Модерен интериор & Комфорт</h3>
+                                    <p class="text-xs text-zinc-300">Луксозна атмосфера за истински джентълмени</p>
+                                </div>
+                                <span class="bg-gold/20 text-gold border border-gold/30 text-xs px-3 py-1 rounded-full font-semibold">
+                                    Кърджали Център
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 bg-dark-bg border-t border-border-color relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="relative group">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-gold to-amber-600 rounded-3xl blur-lg opacity-20"></div>
+                    <div class="relative rounded-2xl overflow-hidden border border-border-color bg-card-bg p-8 text-center flex flex-col items-center justify-center min-h-[400px]">
+                        <img src="pic/logo.jpg" alt="BarberShopTugay Logo Sign" class="max-h-72 object-contain filter drop-shadow-[0_10px_20px_rgba(212,175,55,0.25)] transform hover:scale-105 transition duration-500" onerror="this.src='https://placehold.co/400x300/18181b/D4AF37?text=BarberShopTugay+Logo'">
+                        <p class="text-zinc-400 text-sm mt-4 font-medium tracking-wide">Фирмен стил и перфектна идентичност</p>
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <span class="text-gold font-semibold tracking-widest text-xs uppercase bg-gold/10 px-3 py-1 rounded-full border border-gold/25">За салона</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white leading-tight">
+                        Традиция в бръснарското изкуство с <span class="text-gold">модерен почерк</span>
+                    </h2>
+                    <p class="text-zinc-400 text-base leading-relaxed">
+                        Намиращ се на ул. „Тутракан“ 13 в Кърджали, <strong>BarberShopTugay</strong> предлага не просто подстригване, а цялостно преживяване за мъже, които ценят безупречния външен вид. Със съвременен интериор, шестоъгълно осветление, удобни кожарски столове и топ продукти от световни брандове, ние гарантираме перфектен резултат при всяко посещение.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 pt-2">
+                        <div class="bg-card-bg border border-border-color p-4 rounded-xl">
+                            <span class="text-3xl font-black text-gold block">5.0</span>
+                            <span class="text-xs text-zinc-400 font-medium mt-1 block">Рейтинг в Google Maps</span>
+                        </div>
+                        <div class="bg-card-bg border border-border-color p-4 rounded-xl">
+                            <span class="text-3xl font-black text-gold block">100%</span>
+                            <span class="text-xs text-zinc-400 font-medium mt-1 block">Доволни клиенти</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-24 bg-zinc-950 border-t border-border-color relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-gold font-semibold tracking-widest text-xs uppercase bg-gold/10 px-3 py-1 rounded-full border border-gold/20">Професионални Услуги</span>
+                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white">Ценоразпис & Услуги</h2>
+                <p class="text-zinc-400 text-base">Изберете перфектната комбинация от грижа за вашата коса и брада.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-card-bg border border-border-color rounded-2xl p-6 hover:border-gold/50 transition-all group flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-gold/10 text-gold flex items-center justify-center text-xl group-hover:bg-gold group-hover:text-black transition-colors">
+                                <i class="fa-solid fa-scissors"></i>
+                            </div>
+                            <span class="text-xl font-extrabold text-gold">13 €</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Мъжко Подстригване</h3>
+                        <p class="text-zinc-400 text-sm mb-6">Класическо или модерно подстригване, съобразено с формата на лицето, измиване и стайлинг с премиум продукти.</p>
+                    </div>
+                    <a href="#booking" class="w-full bg-zinc-900 border border-border-color text-zinc-300 font-semibold py-2.5 rounded-xl hover:bg-gold hover:text-black hover:border-gold transition-all text-center text-sm">
+                        Избери услуга
+                    </a>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-card-bg border border-border-color rounded-2xl p-6 hover:border-gold/50 transition-all group flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-gold/10 text-gold flex items-center justify-center text-xl group-hover:bg-gold group-hover:text-black transition-colors">
+                                <i class="fa-solid fa-user-tie"></i>
+                            </div>
+                            <span class="text-xl font-extrabold text-gold">5 €</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Оформяне на Брада</h3>
+                        <p class="text-zinc-400 text-sm mb-6">Прецизно подстригване, контуриране с бръснач, горещи кърпи и специални масла за хидратация и блясък.</p>
+                    </div>
+                    <a href="#booking" class="w-full bg-zinc-900 border border-border-color text-zinc-300 font-semibold py-2.5 rounded-xl hover:bg-gold hover:text-black hover:border-gold transition-all text-center text-sm">
+                        Избери услуга
+                    </a>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-card-bg border border-border-color rounded-2xl p-6 hover:border-gold/50 transition-all group flex flex-col justify-between relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-gold text-black text-[10px] font-extrabold px-3 py-1 rounded-bl-xl uppercase tracking-wider">
+                        Хит
+                    </div>
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-gold/10 text-gold flex items-center justify-center text-xl group-hover:bg-gold group-hover:text-black transition-colors">
+                                <i class="fa-solid fa-crown"></i>
+                            </div>
+                            <span class="text-xl font-extrabold text-gold">25 €</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Комбо Пакет (Коса + Брада)</h3>
+                        <p class="text-zinc-400 text-sm mb-6">Пълна трансформация: професионално подстригване и перфектно оформена брада с измиване и финален стайлинг.</p>
+                    </div>
+                    <a href="#booking" class="w-full bg-gold text-black font-bold py-2.5 rounded-xl hover:bg-gold-light transition-all text-center text-sm shadow-md shadow-gold/20">
+                        Избери услуга
+                    </a>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="bg-card-bg border border-border-color rounded-2xl p-6 hover:border-gold/50 transition-all group flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-gold/10 text-gold flex items-center justify-center text-xl group-hover:bg-gold group-hover:text-black transition-colors">
+                                <i class="fa-solid fa-spray-can-sparkles"></i>
+                            </div>
+                            <span class="text-xl font-extrabold text-gold">5 €</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Стайлинг & Измиване</h3>
+                        <p class="text-zinc-400 text-sm mb-6">Професионално измиване с ароматни шампоани, релаксиращ масаж на скалпа и стилизиране с качествени вакси и спрейове.</p>
+                    </div>
+                    <a href="#booking" class="w-full bg-zinc-900 border border-border-color text-zinc-300 font-semibold py-2.5 rounded-xl hover:bg-gold hover:text-black hover:border-gold transition-all text-center text-sm">
+                        Избери услуга
+                    </a>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="bg-card-bg border border-border-color rounded-2xl p-6 hover:border-gold/50 transition-all group flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-gold/10 text-gold flex items-center justify-center text-xl group-hover:bg-gold group-hover:text-black transition-colors">
+                                <i class="fa-solid fa-child"></i>
+                            </div>
+                            <span class="text-xl font-extrabold text-gold">10 €</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Детско Подстригване</h3>
+                        <p class="text-zinc-400 text-sm mb-6">Специално отношение и внимание към най-малките ни клиенти в приятна и спокойна среда.</p>
+                    </div>
+                    <a href="#booking" class="w-full bg-zinc-900 border border-border-color text-zinc-300 font-semibold py-2.5 rounded-xl hover:bg-gold hover:text-black hover:border-gold transition-all text-center text-sm">
+                        Избери услуга
+                    </a>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="bg-card-bg border border-border-color rounded-2xl p-6 hover:border-gold/50 transition-all group flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-gold/10 text-gold flex items-center justify-center text-xl group-hover:bg-gold group-hover:text-black transition-colors">
+                                <i class="fa-solid fa-fire-flame-curved"></i>
+                            </div>
+                            <span class="text-xl font-extrabold text-gold">5 €</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Кола Маска (Уши/Нос)</h3>
+                        <p class="text-zinc-400 text-sm mb-6">Бързо и ефективно премахване на нежелано окосмяване с професионална грижа.</p>
+                    </div>
+                    <a href="#booking" class="w-full bg-zinc-900 border border-border-color text-zinc-300 font-semibold py-2.5 rounded-xl hover:bg-gold hover:text-black hover:border-gold transition-all text-center text-sm">
+                        Избери услуга
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="py-24 bg-dark-bg border-t border-border-color">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-gold font-semibold tracking-widest text-xs uppercase bg-gold/10 px-3 py-1 rounded-full border border-gold/20">Нашата Обстановка</span>
+                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white">Галерия (Всички Снимки)</h2>
+                <p class="text-zinc-400 text-base">Модерен интериор, професионални продукти и безупречна хигиена от нашето студио в Кърджали.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Gallery Item 1: image.png -->
+                <div class="group relative rounded-2xl overflow-hidden border border-border-color bg-card-bg h-72 shadow-lg">
+                    <img src="pic/vh1.jpg" alt="BarberShopTugay Storefront" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" onerror="this.src='https://placehold.co/400x300/18181b/D4AF37?text=Вход'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+                        <span class="text-gold text-xs font-semibold uppercase tracking-wider">Вход на салона</span>
+                        <h4 class="text-white font-bold text-lg">ул. „Тутракан“ 13, Кърджали</h4>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 2: image_2.png -->
+                <div class="group relative rounded-2xl overflow-hidden border border-border-color bg-card-bg h-72 shadow-lg">
+                    <img src="pic/raft.jpg" alt="Professional hair products" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" onerror="this.src='https://placehold.co/400x300/18181b/D4AF37?text=Продукти'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+                        <span class="text-gold text-xs font-semibold uppercase tracking-wider">Козметика</span>
+                        <h4 class="text-white font-bold text-lg">Премиум вакси, гелове и спрейове</h4>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 3: image_3.png -->
+                <div class="group relative rounded-2xl overflow-hidden border border-border-color bg-card-bg h-72 shadow-lg">
+                    <img src="pic/masastollogo.jpg" alt="Styling chairs and mirror" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" onerror="this.src='https://placehold.co/400x300/18181b/D4AF37?text=Работнo място'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+                        <span class="text-gold text-xs font-semibold uppercase tracking-wider">Работно място</span>
+                        <h4 class="text-white font-bold text-lg">Удобни бръснарски столове</h4>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 4: image_4.png -->
+                <div class="group relative rounded-2xl overflow-hidden border border-border-color bg-card-bg h-72 shadow-lg">
+                    <img src="pic/in.jpg" alt="Interior view with hex lights" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" onerror="this.src='https://placehold.co/400x300/18181b/D4AF37?text=Интериор'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+                        <span class="text-gold text-xs font-semibold uppercase tracking-wider">Интериор</span>
+                        <h4 class="text-white font-bold text-lg">Модерни шестоъгълни светлини</h4>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 5: image_5.png -->
+                <div class="group relative rounded-2xl overflow-hidden border border-border-color bg-card-bg h-72 shadow-lg">
+                    <img src="pic/logo.jpg" alt="Logo Sign" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" onerror="this.src='https://placehold.co/400x300/18181b/D4AF37?text=Лого'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+                        <span class="text-gold text-xs font-semibold uppercase tracking-wider">Бранд</span>
+                        <h4 class="text-white font-bold text-lg">Светещо лого с бръснарски мотиви</h4>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 6: image_6.png -->
+                <div class="group relative rounded-2xl overflow-hidden border border-border-color bg-card-bg h-72 shadow-lg">
+                    <img src="pic/kurpi.jpg" alt="Organized towels" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" onerror="this.src='https://placehold.co/400x300/18181b/D4AF37?text=Кърпи'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+                        <span class="text-gold text-xs font-semibold uppercase tracking-wider">Детайли</span>
+                        <h4 class="text-white font-bold text-lg">Безупречна хигиена и подредба</h4>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 7: image_7.png (spanning full width on md/lg or centered) -->
+                <div class="group relative rounded-2xl overflow-hidden border border-border-color bg-card-bg h-72 shadow-lg md:col-span-2 lg:col-span-3">
+                    <img src="pic/in.jpg" alt="Washbasin and mirror setup" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" onerror="this.src='https://placehold.co/1200x400/18181b/D4AF37?text=Мивки+и+Огледала'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+                        <span class="text-gold text-xs font-semibold uppercase tracking-wider">Зона за измиване</span>
+                        <h4 class="text-white font-bold text-lg">Професионални мивки, огледала и барбер аксесоари</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reviews" class="py-24 bg-zinc-950 border-t border-border-color relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
+                <div>
+                    <span class="text-gold font-semibold tracking-widest text-xs uppercase bg-gold/10 px-3 py-1 rounded-full border border-gold/20">Google Отзиви</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white mt-4">Какво казват нашите клиенти</h2>
+                </div>
+                <div class="mt-6 md:mt-0 flex items-center space-x-4 bg-card-bg border border-border-color px-6 py-4 rounded-2xl">
+                    <div class="text-3xl font-black text-white">5.0</div>
+                    <div>
+                        <div class="flex text-amber-400 text-sm">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <span class="text-xs text-zinc-400">Въз основа на 4 Google отзива</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Featured Review from Джан Мустафа -->
+                <div class="bg-card-bg border border-gold/40 rounded-3xl p-8 relative shadow-xl shadow-gold/5 flex flex-col justify-between">
+                    <div class="absolute top-6 right-8 text-gold/20 text-5xl">
+                        <i class="fa-solid fa-quote-right"></i>
+                    </div>
+                    <div>
+                        <div class="flex text-amber-400 mb-4 text-sm">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-zinc-200 text-base md:text-lg italic leading-relaxed mb-6">
+                            "Страхотно място с невероятно отношение към клиента! Изключително професионално обслужване, внимание към детайла и перфектен краен резултат. Атмосферата е много приятна, а бръснарят определено си разбира от работата. Препоръчвам с две ръце!"
+                        </p>
+                    </div>
+                    <div class="flex items-center justify-between border-t border-border-color pt-4">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-full bg-gold/20 text-gold font-bold flex items-center justify-center border border-gold/30">
+                                ДМ
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Джан Мустафа</h4>
+                                <span class="text-xs text-zinc-400">Google Local Guide · 1 отзив · 14 снимки</span>
+                            </div>
+                        </div>
+                        <span class="text-xs bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2.5 py-1 rounded-full font-medium">
+                            Потвърден отзив
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Additional Review Card -->
+                <div class="bg-card-bg border border-border-color rounded-3xl p-8 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-400 mb-4 text-sm">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-zinc-300 text-base italic leading-relaxed mb-6">
+                            "Най-добрият бръснарски салон в Кърджали! Перфектна чистота, изключително прецизна работа с брадата и страхотно отношение. Винаги си тръгвам повече от доволен."
+                        </p>
+                    </div>
+                    <div class="flex items-center justify-between border-t border-border-color pt-4">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-full bg-zinc-800 text-zinc-300 font-bold flex items-center justify-center border border-border-color">
+                                МК
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Метин К.</h4>
+                                <span class="text-xs text-zinc-400">Редовен клиент</span>
+                            </div>
+                        </div>
+                        <span class="text-xs text-zinc-500">Google Maps</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="booking" class="py-24 bg-dark-bg border-t border-border-color relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                
+                <!-- Contact & Info -->
+                <div id="contact" class="space-y-8">
+                    <div>
+                        <span class="text-gold font-semibold tracking-widest text-xs uppercase bg-gold/10 px-3 py-1 rounded-full border border-gold/20">Контакти & Локация</span>
+                        <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white mt-4">Запазете час или ни посетете</h2>
+                        <p class="text-zinc-400 text-base mt-2">Намираме се в самия център на Кърджали. Заповядайте на място или запазете час онлайн / по телефона.</p>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-4 bg-card-bg border border-border-color p-5 rounded-2xl">
+                            <div class="w-12 h-12 rounded-xl bg-gold/10 text-gold flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold">Адрес</h4>
+                                <p class="text-zinc-400 text-sm mt-1">Кърджали Център, ул. „Тутракан“ 13, 6600 Кърджали</p>
+                                <span class="inline-block mt-2 text-xs text-gold font-semibold">Плюс код: J9RF+52 Кърджали</span>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4 bg-card-bg border border-border-color p-5 rounded-2xl">
+                            <div class="w-12 h-12 rounded-xl bg-gold/10 text-gold flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold">Телефон за връзка</h4>
+                                <p class="text-zinc-400 text-sm mt-1">Обадете се за бърза резервация</p>
+                                <a href="tel:0877733362" class="inline-block mt-2 text-gold font-bold hover:underline text-base">087 773 3362</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4 bg-card-bg border border-border-color p-5 rounded-2xl">
+                            <div class="w-12 h-12 rounded-xl bg-gold/10 text-gold flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-regular fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold">Работно време</h4>
+                                <p class="text-zinc-400 text-sm mt-1">Понеделник - Събота: 09:00 - 19:00 ч.</p>
+                                <span class="inline-flex items-center space-x-1.5 mt-2 text-xs text-emerald-400 font-semibold bg-emerald-500/10 px-2.5 py-0.5 rounded-full border border-emerald-500/20">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                                    <span>Отворено · Затваря в 19:00 ч.</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Booking Form -->
+                <div class="bg-card-bg border border-border-color rounded-3xl p-8 shadow-2xl relative">
+                    <div class="absolute -top-3 right-8 bg-gold text-black text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                        Бърза резервация
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-2">Запази си час</h3>
+                    <p class="text-zinc-400 text-sm mb-6">Попълнете формата и наш представител ще потвърди часа ви възможно най-скоро.</p>
+                    
+                    <form id="booking-form" class="space-y-5" onsubmit="handleBooking(event)">
+                        <div>
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-zinc-300 mb-2">Вашето име</label>
+                            <input type="text" id="client-name" required placeholder="напр. Иван Иванов" class="w-full bg-zinc-900 border border-border-color rounded-xl px-4 py-3 text-white placeholder-zinc-600 focus:outline-none focus:border-gold transition-colors text-sm">
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold uppercase tracking-wider text-zinc-300 mb-2">Телефонен номер</label>
+                                <input type="tel" id="client-phone" required placeholder="напр. 088 123 4567" class="w-full bg-zinc-900 border border-border-color rounded-xl px-4 py-3 text-white placeholder-zinc-600 focus:outline-none focus:border-gold transition-colors text-sm">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold uppercase tracking-wider text-zinc-300 mb-2">Изберете услуга</label>
+                                <select id="client-service" class="w-full bg-zinc-900 border border-border-color rounded-xl px-4 py-3 text-white focus:outline-none focus:border-gold transition-colors text-sm">
+                                    <option value="Haircut">Мъжко Подстригване (13 €)</option>
+                                    <option value="Beard">Оформяне на Брада (5 €)</option>
+                                    <option value="Combo" selected>Комбо Пакет (25 €)</option>
+                                    <option value="Styling">Стайлинг & Измиване (5 €)</option>
+                                    <option value="Kids">Детско Подстригване (10 €)</option>
+                                    <option value="Wax">Кола Маска (5 €)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold uppercase tracking-wider text-zinc-300 mb-2">Желана дата</label>
+                                <input type="date" id="client-date" required class="w-full bg-zinc-900 border border-border-color rounded-xl px-4 py-3 text-white focus:outline-none focus:border-gold transition-colors text-sm">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold uppercase tracking-wider text-zinc-300 mb-2">Желан час</label>
+                                <select id="client-time" class="w-full bg-zinc-900 border border-border-color rounded-xl px-4 py-3 text-white focus:outline-none focus:border-gold transition-colors text-sm">
+                                    <option value="09:00">09:00 ч.</option>
+                                    <option value="09:00">09:30 ч.</option>
+                                    <option value="10:00">10:00 ч.</option>
+                                    <option value="09:00">10:30 ч.</option>
+                                    <option value="11:00">11:00 ч.</option>
+                                    <option value="09:00">11:30 ч.</option>
+                                    <option value="12:00">12:00 ч.</option>
+                                    <option value="09:00">12:30 ч.</option>
+                                    <option value="13:00">13:00 ч.</option>
+                                    <option value="09:00">13:30 ч.</option>
+                                    <option value="14:00">14:00 ч.</option>
+                                    <option value="09:00">14:30 ч.</option>
+                                    <option value="15:00">15:00 ч.</option>
+                                    <option value="09:00">15:30 ч.</option>
+                                    <option value="16:00">16:00 ч.</option>
+                                    <option value="09:00">16:30 ч.</option>
+                                    <option value="17:00">17:00 ч.</option>
+                                    <option value="09:00">17:30 ч.</option>
+                                    <option value="18:00">18:00 ч.</option>
+                                    <option value="09:00">18:30 ч.</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="w-full bg-gold text-black font-bold py-4 rounded-xl hover:bg-gold-light transition-all shadow-lg shadow-gold/20 flex items-center justify-center space-x-2 text-base mt-2">
+                            <i class="fa-regular fa-circle-check"></i>
+                            <span>Потвърди резервацията</span>
+                        </button>
+                    </form>
+
+                    <!-- Success Message Box -->
+                    <div id="success-msg" class="hidden mt-4 p-4 bg-emerald-500/10 border border-emerald-500/30 rounded-2xl text-emerald-400 text-center text-sm font-medium">
+                        <i class="fa-solid fa-circle-check text-lg mb-1 block"></i>
+                        Успешно изпратена заявка! Очаквайте обаждане за потвърждение на часа.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-zinc-950 border-t border-border-color py-12 text-zinc-400 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center space-x-3">
+                <div class="w-8 h-8 rounded-full bg-gold flex items-center justify-center text-black font-bold text-sm">
+                    T
+                </div>
+                <span class="text-white font-bold tracking-wider">BarberShop<span class="text-gold">Tugay</span></span>
+            </div>
+            
+            <p class="text-xs text-zinc-500 text-center md:text-left">
+                © 2026 BarberShopTugay, Кърджали. Всички права запазени.
+            </p>
+
+            <div class="flex items-center space-x-4">
+                <a href="tel:0877733362" class="w-10 h-10 rounded-full bg-zinc-900 border border-border-color flex items-center justify-center text-gold hover:bg-gold hover:text-black transition-colors">
+                    <i class="fa-solid fa-phone"></i>
+                </a>
+                <a href="https://maps.google.com/?q=ул.+Тутракан+13,+Кърджали" target="_blank" class="w-10 h-10 rounded-full bg-zinc-900 border border-border-color flex items-center justify-center text-gold hover:bg-gold hover:text-black transition-colors">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Set default date to today for booking
+        const dateInput = document.getElementById('client-date');
+        if(dateInput) {
+            const today = new Date().toISOString().split('T')[0];
+            dateInput.value = today;
+            dateInput.min = today;
+        }
+
+        // Booking form submission simulation without alert()
+        function handleBooking(event) {
+            event.preventDefault();
+            const name = document.getElementById('client-name').value;
+            const successBox = document.getElementById('success-msg');
+            const form = document.getElementById('booking-form');
+
+            successBox.innerHTML = `<i class="fa-solid fa-circle-check text-lg mb-1 block"></i> Благодарим ви, <strong>${name}</strong>! Часът ви е заявен успешно. Ще се свържем с вас за потвърждение на посочения телефон.`;
+            successBox.classList.remove('hidden');
+            form.reset();
+
+            // Reset date
+            if(dateInput) {
+                const today = new Date().toISOString().split('T')[0];
+                dateInput.value = today;
+            }
+
+            setTimeout(() => {
+                successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 100);
+        }
+    </script>
+</body>
+</html>
